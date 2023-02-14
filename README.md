@@ -26,8 +26,6 @@ This extension contributes the following settings:
 
 If you have any feedback feel free to submit an issue to this repository.
 
-### 0.0.1
-
 Initial release of Prefilled Header
 
 ### 0.0.1
