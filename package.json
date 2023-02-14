@@ -1,0 +1,123 @@
+{
+  "name": "prefilledHeader",
+  "version": "0.0.1",
+  "displayName": "Prefilled Header",
+  "description": "Automatically added the copyright in your file.",
+  "license": "MIT",
+  "keywords": [
+    "copyright"
+  ],
+  "icon": "header.png",
+  "galleryBanner": {
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "publisher": "Shubham Latiyan",
+  "preview": true,
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.addCopyright",
+    "onLanguage:c",
+    "onLanguage:cpp",
+    "onLanguage:csharp",
+    "onLanguage:css",
+    "onLanguage:go",
+    "onLanguage:java",
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact",
+    "onLanguage:objective-c",
+    "onLanguage:rust",
+    "onLanguage:scss",
+    "onLanguage:swift",
+    "onLanguage:sql",
+    "onLanguage:typescript",
+    "onLanguage:typescriptreact",
+    "onLanguage:vue"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.addCopyright",
+        "title": "Add Copyright"
+      }
+    ],
+    "configuration": {
+      "title": "prefilledHeader",
+      "properties": {
+        "prefilledHeader.author": {
+          "type": "string",
+          "default": "",
+          "description": "The author that holds the copyright."
+        },
+        "prefilledHeader.text": {
+          "type": "string",
+          "default": "",
+          "editPresentation": "multilineText",
+          "multiline": true,
+          "description": "Enter the header text. You can enter multiline text."
+        },
+        "prefilledHeader.newFilesOnly": {
+          "type": "boolean",
+          "default": true,
+          "description": "Inject Copyright notice in new files only"
+        },
+        "prefilledHeader.languages": {
+          "type": "array",
+          "default": [
+            "typescript",
+            "javascript",
+            "javascriptreact",
+            "typescriptreact",
+            "css"
+          ],
+          "description": "Select languages for which you want to inject prefilled header while creating new file.",
+          "items": {
+            "type": "string",
+            "enum": [
+              "c",
+              "cpp",
+              "csharp",
+              "css",
+              "go",
+              "java",
+              "javascript",
+              "javascriptreact",
+              "python",
+              "objective-c",
+              "rust",
+              "scss",
+              "swift",
+              "sql",
+              "typescript",
+              "typescriptreact",
+              "vue"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^10.12.21",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.1",
+    "vscode": "^1.1.37",
+    "vscode-test": "^0.4.3"
+  }
+}
