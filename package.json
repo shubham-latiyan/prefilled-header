@@ -1,7 +1,10 @@
 {
   "name": "prefilledHeader",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "displayName": "Prefilled Header",
+  "author": {
+    "name": "Shubham Latiyan"
+  },
   "description": "Automatically added the copyright in your file.",
   "license": "MIT",
   "keywords": [
@@ -14,7 +17,7 @@
   "repository": {
     "type": "git"
   },
-  "publisher": "Shubham Latiyan",
+  "publisher": "slatiyan",
   "preview": true,
   "engines": {
     "vscode": "^1.74.0"
